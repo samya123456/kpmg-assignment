@@ -7,7 +7,7 @@
 * `docker-compose.yml` file has been provided to setup the Mediawiki and Mysql services on a docker node.
 
 ## Kubernetes
-The kubernetes objects are defined in following files inside k8s directory: `mediawiki-deployment.yaml` `mediawiki-service.yaml` `db-deployment.yaml` `db-service.yaml` `env-configmap.yaml` `wikinetwork-networkpolicy.yaml` `secret.yaml`
+The kubernetes objects are defined in following files inside k8s directory: `db-persistentvolumeclaim.yaml` `file-persistentvolumeclaim.yaml` `mediawiki-deployment.yaml` `mediawiki-service.yaml` `db-deployment.yaml` `db-service.yaml` `env-configmap.yaml` `wikinetwork-networkpolicy.yaml` `secret.yaml`
 
 * `secret.yaml` file is created for storing base64 converted password string to be used for variable MYSQL_ROOT_PASSWORD.
 

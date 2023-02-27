@@ -18,7 +18,7 @@ On the Kubernetes workstation, run command:
 
 ```bash
 cd k8s
-kubectl apply -f db-persistentvolumeclaim.yaml,mediawiki-deployment.yaml,mediawiki-service.yaml,db-deployment.yaml,db-service.yaml,env-configmap.yaml,secret.yaml
+kubectl apply -f db-persistentvolumeclaim.yaml,file-persistentvolumeclaim.yaml,mediawiki-deployment.yaml,mediawiki-service.yaml,db-deployment.yaml,db-service.yaml,env-configmap.yaml,secret.yaml
 ```
 
 Once both the Mediawiki and db pods are up and running, the app UI can be accessed using the Mediawiki service hostname/ip and port.

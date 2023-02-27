@@ -1,6 +1,3 @@
-# mediawiki
-Contains docker and kubernetes files for setting up the Mediawiki v1.34 service on Kubernetes cluster
-The YAML files are generated with some pre-configured values and needs to be modified for further generalization.
 
 ## Dockerfiles
 * `/mediawiki-app/Dockerfile` - For installing and configuring Mediawiki 
@@ -20,6 +17,7 @@ Replace the encrypted string by generating a new string using command: `echo -n 
 On the Kubernetes workstation, run command:
 
 ```bash
+cd k8s
 kubectl apply -f mediawiki-deployment.yaml,mediawiki-service.yaml,db-deployment.yaml,db-service.yaml,env-configmap.yaml,secret.yaml
 ```
 
@@ -40,7 +38,11 @@ After final submission you it will generate a LocalSettings.php file which needs
 Install the Helm chart using command: 
 
 ```bash
-helm install mediawiki ./mediawiki-chart
+    cd terraform_script
+    helm create mediawiki-chart-values
+    rm -rf ./mediawiki-chart-values/*
+    rsync -r mediawiki-chart-values/ mediawiki-chart
+    helm install mediawiki-chart ./mediawiki-chart-values
 ```
 # Terraform 
 
